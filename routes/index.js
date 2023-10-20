@@ -7,11 +7,15 @@ const router = express.Router();
  * res - Lo que express devuelve (sirve al cliente).
  */
 router.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.render('home');
 });
 
 router.get('/about', (req, res) => {
-  res.send('About');
+  const travels = 'Viaje a Cuba';
+
+  res.render('about', {
+    travels,
+  });
 });
 
 router.get('/contact', (req, res) => {
