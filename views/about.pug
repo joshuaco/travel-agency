@@ -1,5 +1,25 @@
 extends ./layout/index
 
-block content
-  p Nosotros 
-  p #{travels}
+block content 
+  main.container.mt-5 
+    .row 
+      .col-md-5 
+        img(src="/img/nosotros.jpg" alt="about image" class="img-fluid")
+      .col-md-7
+        h1 #{page}
+        blockquote Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis dolores beatae ratione quas. Cupiditate ducimus ullam, cum repellat quasi incidunt pariatur tempore ipsum aliquam voluptatem dolorem.
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum ipsam quaerat animi, facere ut unde porro error dolor doloremque dolore hic, quidem possimus velit, iste eaque? Beatae corporis nihil repellat.Voluptas reiciendis eaque, provident nesciunt explicabo necessitatibus qui, accusantium quia error architecto quisquam repellat blanditiis esse assumenda maiores? Dolor autem laudantium expedita at nihil quod dicta libero cum repudiandae amet.
+  .listado-iconos
+    .container.mt-5.py-5.text-center 
+      .row 
+        .col-md-4 
+          img(src="/img/icono_seguridad.svg" alt="seguridad" class="img-fluid mb-4")
+          h2.mb-4 Seguridad 
+
+        .col-md-4 
+          img(src="/img/icono_destinos.svg" alt="destinos" class="img-fluid mb-4")
+          h2.mb-4 Destinos increíbles
+
+        .col-md-4 
+          img(src="/img/icono_precios.svg" alt="precios" class="img-fluid mb-4")
+          h2.mb-4 Los mejores precios 

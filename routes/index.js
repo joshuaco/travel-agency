@@ -7,19 +7,33 @@ const router = express.Router();
  * res - Lo que express devuelve (sirve al cliente).
  */
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', {
+    page: 'Inicio',
+  });
 });
 
 router.get('/about', (req, res) => {
-  const travels = 'Viaje a Cuba';
-
   res.render('about', {
-    travels,
+    page: 'Nosotros',
   });
 });
 
 router.get('/contact', (req, res) => {
-  res.send('Contact');
+  res.render('contact', {
+    page: 'Contacto',
+  });
+});
+
+router.get('/travels', (req, res) => {
+  res.render('travels', {
+    page: 'Viajes',
+  });
+});
+
+router.get('/testimonials', (req, res) => {
+  res.render('testimonials', {
+    page: 'Testimonios',
+  });
 });
 
 export default router;
