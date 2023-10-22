@@ -4,6 +4,7 @@ import {
   aboutpage,
   contactpage,
   travelpage,
+  travelDetailPage,
   testimonialpage,
 } from '../controllers/pagesController.js';
 
@@ -16,6 +17,8 @@ router.get('/about', aboutpage);
 router.get('/contact', contactpage);
 
 router.get('/travels', travelpage);
+
+router.get('/travels/:slug', travelDetailPage);
 
 router.get('/testimonials', testimonialpage);
 

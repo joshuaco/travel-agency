@@ -1,3 +1,5 @@
+import { Travel } from '../models/Travel.js';
+
 /**
  * req - Lo que enviamos.
  * res - Lo que express devuelve (sirve al cliente).
@@ -20,10 +22,30 @@ const contactpage = (req, res) => {
   });
 };
 
-const travelpage = (req, res) => {
+const travelpage = async (req, res) => {
+  // Query database -> Consultar base de datos
+  const travels = await Travel.findAll();
+
   res.render('travels', {
     page: 'Viajes',
+    travels,
   });
+};
+
+// Show single travel by slug
+const travelDetailPage = async (req, res) => {
+  const { slug } = req.params;
+
+  try {
+    const travel = await Travel.findOne({ where: { slug } });
+
+    res.render('travel', {
+      page: 'Información del viaje',
+      travel,
+    });
+  } catch (error) {
+    console.log('No se pudo obtener la página' + error);
+  }
 };
 
 const testimonialpage = (req, res) => {
@@ -32,4 +54,11 @@ const testimonialpage = (req, res) => {
   });
 };
 
-export { homepage, aboutpage, contactpage, travelpage, testimonialpage };
+export {
+  homepage,
+  aboutpage,
+  contactpage,
+  travelpage,
+  travelDetailPage,
+  testimonialpage,
+};

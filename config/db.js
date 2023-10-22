@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 
+// Configure database connection
 const db = new Sequelize('agencia_viajes', 'root', 'root', {
   host: 'localhost',
   port: 33061,
