@@ -24,6 +24,9 @@ app.use((req, res, next) => {
   next(); // 'return next' force the execution of the next middleware
 });
 
+// Add body parser to read form data
+app.use(express.urlencoded({ extended: true }));
+
 // Define public folder
 app.use(express.static('public'));
 
