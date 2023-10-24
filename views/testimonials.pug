@@ -5,19 +5,9 @@ block content
     h1.text-center.mt-5 #{page}
 
     blockquote.col.text-center Nuestros clientes y sus experiencias
-    .row.testimoniales 
-      each testimonial in testimonials 
-        .col-md-6.col-lg-4.mb-4
-          .card 
-            .card-body 
-              blockquote.blockquote 
-              p.mb-0 #{testimonial.message}
-              footer.blockquote-footer #{testimonial.name}
-
-
+    include ./layout/testimonials_block
 
     .row 
-      
       .col-md-12
         h2.d-block.w-100.text-center Agrega un testimonio 
 

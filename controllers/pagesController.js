@@ -6,14 +6,20 @@ import { Testimonial } from '../models/Testimonial.js';
  * res - Lo que express devuelve (sirve al cliente).
  */
 const homepage = async (req, res) => {
-  // Query 3 travels from database
+  // Query 2 db at the same time
+  const promiseDB = [];
+
+  promiseDB.push(Travel.findAll({ limit: 3 }));
+  promiseDB.push(Testimonial.findAll({ limit: 3 }));
+
   try {
-    const travels = await Travel.findAll({ limit: 3 });
+    const data = await Promise.all(promiseDB);
 
     res.render('home', {
       page: 'Inicio',
       clase: 'home',
-      travels,
+      travels: data[0],
+      testimonials: data[1],
     });
   } catch (error) {
     console.log(error);
