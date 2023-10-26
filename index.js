@@ -20,6 +20,7 @@ app.set('view engine', 'pug');
 // Set sitename in locals
 app.use((req, res, next) => {
   res.locals.sitename = 'Travel Agency';
+  res.locals.actualYear = new Date().getFullYear();
 
   next(); // 'return next' force the execution of the next middleware
 });
